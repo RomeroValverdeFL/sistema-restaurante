@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /*@Entity
-@Table(name = "SECCION_CARTA")*/
-public class SeccionCarta {
+@Table(name = "PROVEEDOR_TIPO_PROVEEDORES")*/
+public class ProveedorTipoProveedores {
 
 }

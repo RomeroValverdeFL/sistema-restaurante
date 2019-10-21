@@ -1,5 +1,7 @@
 package pe.dashboard.SistemaIntegralRestaurante.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,28 +10,37 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import pe.dashboard.SistemaIntegralRestaurante.model.entity.Cargos;
+
 @Entity
-@Table(name="USUARIOS")
-public class Usuarios {
+@Table(name = "COLABORADORES")
+public class Colaboradores {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "COD_USUARIO")
-	private Integer codigoUsuario;
+	@Column(name = "COD_SOLABORADOR")
+	private Integer codigoColaborador;
 	
-	@Column(name = "CLAVE_USUARIO", length = 42, nullable = false )
+	@Column(name = "NOM_COLABORADOR", length = 42, nullable = false )
 	private String nombreColaborador;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_COLABORADOR")
-	private Colaboradores colaboradores;
+	@Column(name = "APE_PAT_COLABORADOR", length = 42, nullable = false )
+	private String apellidoPaternoColaborador;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_TIPO_USUARIOS")
-	private TipoUsuarios tipoUsuarios;
+	@Column(name = "APE_MAT_COLABORADOR", length = 42, nullable = false )
+	private String apellidoMaternoColaborador;
 	
+	@Column(name = "NUM_DOCUMENTO_IDENTIDAD", length = 20, nullable = false )
+	private String numeroDocumentoIdentidad;
+	
+	@Column(name = "GENERO", length = 20, nullable = false )
+	private String genero;
+	
+	@OneToMany(mappedBy = "colaboradores", fetch = FetchType.LAZY)
+	private List<Cargos> cargos;
+
 	@Column(name = "FEC_CREACION", length = 15, nullable = false )
 	private String fechaCreacion;
 	
@@ -46,12 +57,12 @@ public class Usuarios {
 	@JoinColumn(name = "COD_ESTADO")
 	private Estados estados;
 
-	public Integer getCodigoUsuario() {
-		return codigoUsuario;
+	public Integer getCodigoColaborador() {
+		return codigoColaborador;
 	}
 
-	public void setCodigoUsuario(Integer codigoUsuario) {
-		this.codigoUsuario = codigoUsuario;
+	public void setCodigoColaborador(Integer codigoColaborador) {
+		this.codigoColaborador = codigoColaborador;
 	}
 
 	public String getNombreColaborador() {
@@ -62,20 +73,44 @@ public class Usuarios {
 		this.nombreColaborador = nombreColaborador;
 	}
 
-	public Colaboradores getColaboradores() {
-		return colaboradores;
+	public String getApellidoPaternoColaborador() {
+		return apellidoPaternoColaborador;
 	}
 
-	public void setColaboradores(Colaboradores colaboradores) {
-		this.colaboradores = colaboradores;
+	public void setApellidoPaternoColaborador(String apellidoPaternoColaborador) {
+		this.apellidoPaternoColaborador = apellidoPaternoColaborador;
 	}
 
-	public TipoUsuarios getTipoUsuarios() {
-		return tipoUsuarios;
+	public String getApellidoMaternoColaborador() {
+		return apellidoMaternoColaborador;
 	}
 
-	public void setTipoUsuarios(TipoUsuarios tipoUsuarios) {
-		this.tipoUsuarios = tipoUsuarios;
+	public void setApellidoMaternoColaborador(String apellidoMaternoColaborador) {
+		this.apellidoMaternoColaborador = apellidoMaternoColaborador;
+	}
+
+	public String getNumeroDocumentoIdentidad() {
+		return numeroDocumentoIdentidad;
+	}
+
+	public void setNumeroDocumentoIdentidad(String numeroDocumentoIdentidad) {
+		this.numeroDocumentoIdentidad = numeroDocumentoIdentidad;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public List<Cargos> getCargos() {
+		return cargos;
+	}
+
+	public void setCargos(List<Cargos> cargos) {
+		this.cargos = cargos;
 	}
 
 	public String getFechaCreacion() {
@@ -117,5 +152,6 @@ public class Usuarios {
 	public void setEstados(Estados estados) {
 		this.estados = estados;
 	}
+	
 	
 }

@@ -8,28 +8,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="USUARIOS")
-public class Usuarios {
+@Table(name="TIPO_USUARIOS")
+public class TipoUsuarios {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "COD_USUARIO")
-	private Integer codigoUsuario;
+	@Column(name = "COD_TIPO_USUARIOS")
+	private Integer codigoTipoUsuarios;
 	
-	@Column(name = "CLAVE_USUARIO", length = 42, nullable = false )
-	private String nombreColaborador;
+	@Column(name = "NOM_TIPO_USUARIO", length = 40, nullable = false )
+	private String nombreTipoUsuario;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_COLABORADOR")
-	private Colaboradores colaboradores;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_TIPO_USUARIOS")
-	private TipoUsuarios tipoUsuarios;
-	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "COD_MODULO")
+	private Modulos modulos;
+
 	@Column(name = "FEC_CREACION", length = 15, nullable = false )
 	private String fechaCreacion;
 	
@@ -46,36 +41,28 @@ public class Usuarios {
 	@JoinColumn(name = "COD_ESTADO")
 	private Estados estados;
 
-	public Integer getCodigoUsuario() {
-		return codigoUsuario;
+	public Integer getCodigoTipoUsuarios() {
+		return codigoTipoUsuarios;
 	}
 
-	public void setCodigoUsuario(Integer codigoUsuario) {
-		this.codigoUsuario = codigoUsuario;
+	public void setCodigoTipoUsuarios(Integer codigoTipoUsuarios) {
+		this.codigoTipoUsuarios = codigoTipoUsuarios;
 	}
 
-	public String getNombreColaborador() {
-		return nombreColaborador;
+	public String getNombreTipoUsuario() {
+		return nombreTipoUsuario;
 	}
 
-	public void setNombreColaborador(String nombreColaborador) {
-		this.nombreColaborador = nombreColaborador;
+	public void setNombreTipoUsuario(String nombreTipoUsuario) {
+		this.nombreTipoUsuario = nombreTipoUsuario;
 	}
 
-	public Colaboradores getColaboradores() {
-		return colaboradores;
+	public Modulos getModulos() {
+		return modulos;
 	}
 
-	public void setColaboradores(Colaboradores colaboradores) {
-		this.colaboradores = colaboradores;
-	}
-
-	public TipoUsuarios getTipoUsuarios() {
-		return tipoUsuarios;
-	}
-
-	public void setTipoUsuarios(TipoUsuarios tipoUsuarios) {
-		this.tipoUsuarios = tipoUsuarios;
+	public void setModulos(Modulos modulos) {
+		this.modulos = modulos;
 	}
 
 	public String getFechaCreacion() {
@@ -117,5 +104,7 @@ public class Usuarios {
 	public void setEstados(Estados estados) {
 		this.estados = estados;
 	}
+	
+	
 	
 }

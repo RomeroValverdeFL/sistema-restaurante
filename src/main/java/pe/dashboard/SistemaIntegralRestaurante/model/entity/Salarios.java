@@ -8,28 +8,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="USUARIOS")
-public class Usuarios {
+@Table(name="SALARIOS")
+public class Salarios {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "COD_USUARIO")
-	private Integer codigoUsuario;
+	@Column(name = "COD_SALARIO")
+	private Integer codigoSalario;
 	
-	@Column(name = "CLAVE_USUARIO", length = 42, nullable = false )
-	private String nombreColaborador;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_COLABORADOR")
-	private Colaboradores colaboradores;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_TIPO_USUARIOS")
-	private TipoUsuarios tipoUsuarios;
-	
+	@Column(name = "MONTO_SALARIO", nullable = false )
+	private Double montoSalario;
+
 	@Column(name = "FEC_CREACION", length = 15, nullable = false )
 	private String fechaCreacion;
 	
@@ -46,36 +37,20 @@ public class Usuarios {
 	@JoinColumn(name = "COD_ESTADO")
 	private Estados estados;
 
-	public Integer getCodigoUsuario() {
-		return codigoUsuario;
+	public Integer getCodigoSalario() {
+		return codigoSalario;
 	}
 
-	public void setCodigoUsuario(Integer codigoUsuario) {
-		this.codigoUsuario = codigoUsuario;
+	public void setCodigoSalario(Integer codigoSalario) {
+		this.codigoSalario = codigoSalario;
 	}
 
-	public String getNombreColaborador() {
-		return nombreColaborador;
+	public Double getMontoSalario() {
+		return montoSalario;
 	}
 
-	public void setNombreColaborador(String nombreColaborador) {
-		this.nombreColaborador = nombreColaborador;
-	}
-
-	public Colaboradores getColaboradores() {
-		return colaboradores;
-	}
-
-	public void setColaboradores(Colaboradores colaboradores) {
-		this.colaboradores = colaboradores;
-	}
-
-	public TipoUsuarios getTipoUsuarios() {
-		return tipoUsuarios;
-	}
-
-	public void setTipoUsuarios(TipoUsuarios tipoUsuarios) {
-		this.tipoUsuarios = tipoUsuarios;
+	public void setMontoSalario(Double montoSalario) {
+		this.montoSalario = montoSalario;
 	}
 
 	public String getFechaCreacion() {
@@ -117,5 +92,6 @@ public class Usuarios {
 	public void setEstados(Estados estados) {
 		this.estados = estados;
 	}
+	
 	
 }

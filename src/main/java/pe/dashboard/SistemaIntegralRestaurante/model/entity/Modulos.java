@@ -8,27 +8,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="USUARIOS")
-public class Usuarios {
+@Table(name="MODULOS")
+public class Modulos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "COD_USUARIO")
-	private Integer codigoUsuario;
+	@Column(name = "COD_MODULO")
+	private Integer codigoModulo;
 	
-	@Column(name = "CLAVE_USUARIO", length = 42, nullable = false )
-	private String nombreColaborador;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_COLABORADOR")
-	private Colaboradores colaboradores;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_TIPO_USUARIOS")
-	private TipoUsuarios tipoUsuarios;
+	@Column(name = "NOM_MODULO", length = 40, nullable = false )
+	private String nombreModulo;
 	
 	@Column(name = "FEC_CREACION", length = 15, nullable = false )
 	private String fechaCreacion;
@@ -46,36 +37,20 @@ public class Usuarios {
 	@JoinColumn(name = "COD_ESTADO")
 	private Estados estados;
 
-	public Integer getCodigoUsuario() {
-		return codigoUsuario;
+	public Integer getCodigoModulo() {
+		return codigoModulo;
 	}
 
-	public void setCodigoUsuario(Integer codigoUsuario) {
-		this.codigoUsuario = codigoUsuario;
+	public void setCodigoModulo(Integer codigoModulo) {
+		this.codigoModulo = codigoModulo;
 	}
 
-	public String getNombreColaborador() {
-		return nombreColaborador;
+	public String getNombreModulo() {
+		return nombreModulo;
 	}
 
-	public void setNombreColaborador(String nombreColaborador) {
-		this.nombreColaborador = nombreColaborador;
-	}
-
-	public Colaboradores getColaboradores() {
-		return colaboradores;
-	}
-
-	public void setColaboradores(Colaboradores colaboradores) {
-		this.colaboradores = colaboradores;
-	}
-
-	public TipoUsuarios getTipoUsuarios() {
-		return tipoUsuarios;
-	}
-
-	public void setTipoUsuarios(TipoUsuarios tipoUsuarios) {
-		this.tipoUsuarios = tipoUsuarios;
+	public void setNombreModulo(String nombreModulo) {
+		this.nombreModulo = nombreModulo;
 	}
 
 	public String getFechaCreacion() {
@@ -117,5 +92,6 @@ public class Usuarios {
 	public void setEstados(Estados estados) {
 		this.estados = estados;
 	}
+	
 	
 }

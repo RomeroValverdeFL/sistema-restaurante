@@ -8,30 +8,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="USUARIOS")
-public class Usuarios {
+@Table(name="MESAS")
+public class Mesas {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "COD_USUARIO")
-	private Integer codigoUsuario;
+	@Column(name = "COD_MESAS")
+	private Integer codigoMesa;
 	
-	@Column(name = "CLAVE_USUARIO", length = 42, nullable = false )
-	private String nombreColaborador;
+	@Column(name = "NOM_MESA", length = 30, nullable = false )
+	private String nombreMesa;
 	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_COLABORADOR")
-	private Colaboradores colaboradores;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "COD_TIPO_USUARIOS")
-	private TipoUsuarios tipoUsuarios;
-	
-	@Column(name = "FEC_CREACION", length = 15, nullable = false )
-	private String fechaCreacion;
+	@Column(name = "CAPACIDAD", nullable = false )
+	private Integer capacidad;
 	
 	@Column(name = "USU_CREACION", length = 15, nullable = false )
 	private String usuarioCreacion;
@@ -46,44 +38,28 @@ public class Usuarios {
 	@JoinColumn(name = "COD_ESTADO")
 	private Estados estados;
 
-	public Integer getCodigoUsuario() {
-		return codigoUsuario;
+	public Integer getCodigoMesa() {
+		return codigoMesa;
 	}
 
-	public void setCodigoUsuario(Integer codigoUsuario) {
-		this.codigoUsuario = codigoUsuario;
+	public void setCodigoMesa(Integer codigoMesa) {
+		this.codigoMesa = codigoMesa;
 	}
 
-	public String getNombreColaborador() {
-		return nombreColaborador;
+	public String getNombreMesa() {
+		return nombreMesa;
 	}
 
-	public void setNombreColaborador(String nombreColaborador) {
-		this.nombreColaborador = nombreColaborador;
+	public void setNombreMesa(String nombreMesa) {
+		this.nombreMesa = nombreMesa;
 	}
 
-	public Colaboradores getColaboradores() {
-		return colaboradores;
+	public Integer getCapacidad() {
+		return capacidad;
 	}
 
-	public void setColaboradores(Colaboradores colaboradores) {
-		this.colaboradores = colaboradores;
-	}
-
-	public TipoUsuarios getTipoUsuarios() {
-		return tipoUsuarios;
-	}
-
-	public void setTipoUsuarios(TipoUsuarios tipoUsuarios) {
-		this.tipoUsuarios = tipoUsuarios;
-	}
-
-	public String getFechaCreacion() {
-		return fechaCreacion;
-	}
-
-	public void setFechaCreacion(String fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
+	public void setCapacidad(Integer capacidad) {
+		this.capacidad = capacidad;
 	}
 
 	public String getUsuarioCreacion() {
@@ -117,5 +93,6 @@ public class Usuarios {
 	public void setEstados(Estados estados) {
 		this.estados = estados;
 	}
+	
 	
 }
