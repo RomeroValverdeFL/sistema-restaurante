@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import pe.dashboard.SistemaIntegralRestaurante.model.entity.Cargos;
@@ -38,8 +39,8 @@ public class Colaboradores {
 	@Column(name = "GENERO", length = 20, nullable = false )
 	private String genero;
 	
-	@OneToMany(mappedBy = "colaboradores", fetch = FetchType.LAZY)
-	private List<Cargos> cargos;
+	//@OneToOne(mappedBy = "colaboradores", fetch = FetchType.LAZY)
+	//private Cargos cargos;
 
 	@Column(name = "FEC_CREACION", length = 15, nullable = false )
 	private String fechaCreacion;
@@ -105,14 +106,14 @@ public class Colaboradores {
 		this.genero = genero;
 	}
 
-	public List<Cargos> getCargos() {
+	/**public List<Cargos> getCargos() {
 		return cargos;
 	}
 
 	public void setCargos(List<Cargos> cargos) {
 		this.cargos = cargos;
 	}
-
+*/
 	public String getFechaCreacion() {
 		return fechaCreacion;
 	}
