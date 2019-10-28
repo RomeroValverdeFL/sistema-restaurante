@@ -8,11 +8,11 @@
 		<version>2.1.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>pe.edu.upn</groupId>
-	<artifactId>demo</artifactId>
+	<groupId>pe.dashboard.SistemaIntegralRestaurante</groupId>
+	<artifactId>SistemaIntegralRestaurante</artifactId>
 	<version>1.0</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+		<name>SistemaIntegralRestaurante</name>
+	<description>Sistema administrativo para restaurante</description>
 
 	<properties>
 		<java.version>1.8</java.version>
