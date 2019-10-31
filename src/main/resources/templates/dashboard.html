@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace = "layout/layout :: head"></head>
+<head th:replace="layout/layout :: head"></head>
 <body>
-<header th:replace = "layout/layout :: header"></header>
+	<header th:replace="layout/layout :: header"></header>
 
-<div class = "container">
+	<div class="container">
 
-	<h1>University index</h1>
-	
-</div>
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-2"><img src="..." class="img-fluid" alt="Responsive image"></div>
+			<div class="col-md-2">word</div>
+			<div class="col-md-2">hello</div>
+			<div class="col-md-2">word</div>
+			<div class="col-md-2">hello</div>
+			<div class="col-md-2">word</div>
+		</div>
+	</div>
 
-<footer th:replace = "layout/layout :: footer"></footer>
+	<footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>
