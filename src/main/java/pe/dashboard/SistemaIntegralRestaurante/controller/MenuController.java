@@ -22,7 +22,7 @@ import pe.dashboard.SistemaIntegralRestaurante.service.MenuService;
 
 @Controller
 @RequestMapping("/menu")
-@SessionAttributes( {"menu"} )
+@SessionAttributes( {"menu","estados"} )
 public class MenuController {
 	
 	@Autowired
@@ -71,7 +71,7 @@ public class MenuController {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return "redirect:/dashboard/carta/inicio";
+		return "redirect:/menu";
 	}
 	@GetMapping("/nuevo")
 	public String nuevo(Model model) {
