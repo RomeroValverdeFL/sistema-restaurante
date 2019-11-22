@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/layout :: head"></head>
+<meta charset="UTF-8" ></meta>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Lista de Estados</h1>
+
+		<div class="card text-center">
+			<div class="card-header">Lista de Estados</div>
+			<div class="card-body">
+				
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+  					<span th:text="${dangerDel}"></span>
+				</div>
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nombre</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody th:each="estado: ${estados}">
+						<tr>
+							<th scope="row" th:text="${estado.codigoEstado}">Código</th>
+							<td th:text="${estado.nombreEstado}">Nombre</td>
+						
+							<td>
+								<a th:href="@{ '/estado/info/' + ${estado.codigoEstado} }" class="btn btn-info"> 
+									<i class="fas fa-info"></i> 
+								</a>
+								
+								<a th:href="@{ '/estado/edit/' + ${estado.codigoEstado} }" class="btn btn-warning"> 
+									<i class="fas fa-edit"></i> 
+								</a>
+								 
+								<a  th:href="@{ '/estado/del/' + ${estado.codigoEstado} }" class="btn btn-danger"> 
+									<i class="fas fa-trash-alt"></i> 
+								</a>							
+							</td>
+							 
+						</tr>						
+					</tbody>
+				</table>
+
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/estado/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nueva Estado</a>
+			</div>
+		</div>
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
+
+
+
+
+
+
+
+

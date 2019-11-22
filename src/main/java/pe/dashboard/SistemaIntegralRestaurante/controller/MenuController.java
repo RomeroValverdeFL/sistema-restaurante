@@ -90,8 +90,8 @@ public class MenuController {
 	@GetMapping("/del/{id}")
 	public String eliminar(@PathVariable("id") int id, Model model) {
 		try {
-			Optional<Menu> medico = menuService.findById(id);
-			if(medico.isPresent()) {
+			Optional<Menu> menu = menuService.findById(id);
+			if(menu.isPresent()) {
 				menuService.deleteById(id);
 			}
 		} catch (Exception e) {

@@ -2,9 +2,10 @@
 spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://localhost:1433;databasename=DB_RESTAURANTE_CAJAMARQUINO
+    url: jdbc:sqlserver://10.100.120.141;databasename=ReportTest
     username: sa
-    password: 12345678
+    password: Passw0rd
+    #password: 12345678
   jpa:
     database: sql-server
     hibernate:
