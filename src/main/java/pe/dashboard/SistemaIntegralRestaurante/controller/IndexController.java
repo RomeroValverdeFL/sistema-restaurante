@@ -12,5 +12,11 @@ public class IndexController {
 	public String index() {
 		return "index";	// Archivo html que se devuelve
 	}
+	
+	@GetMapping("login")
+	public String login() {
+		return "login";
+	}
+	
 
 }

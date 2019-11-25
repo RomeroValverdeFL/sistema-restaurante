@@ -20,4 +20,9 @@ public class DashboardController {
 		}
 		return "/dashboard";
 	}
+	
+	@GetMapping("login")
+	public String login() {
+		return "/login";
+	}
 }

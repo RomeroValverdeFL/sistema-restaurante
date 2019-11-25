@@ -31,9 +31,8 @@ public class UsuarioController {
 	public String register(Model model) {
 		Usuario usuario = new Usuario();
 		model.addAttribute("usuario", usuario);
-		return "/usuario/register";
+		return "/dashboard/usuario/register";
 	}
-	
 	@PostMapping("/save")
 	public String save(@ModelAttribute("usuario") Usuario usuario, 
 			Model model, SessionStatus status) {

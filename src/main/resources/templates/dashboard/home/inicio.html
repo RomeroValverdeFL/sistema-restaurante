@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/layout :: head"></head>
+<meta charset="UTF-8" ></meta>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Lista de Mesas</h1>
+
+		<div class="card text-center">
+			<div class="card-header">Lista de Mesas</div>
+			<div class="card-body">
+				
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+  					<span th:text="${dangerDel}"></span>
+				</div>
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Capacidad</th>
+							<th scope="col">Estado</th>						
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody th:each="mesa: ${mesas}">
+						<tr>
+							<th scope="row" th:text="${mesa.codigoMesa}">Código</th>
+							<td th:text="${mesa.nombreMesa}">Nombre</td>
+							<td th:text="${mesa.capacidad}">Capacidad</td>
+							<td th:text="${menu.estados.nombreEstado}">Estado</td>												
+							<td>
+								<a th:href="@{ '/mesa/info/' + ${mesa.codigoMesa} }" class="btn btn-info"> 
+									<i class="fas fa-info"></i> 
+								</a>
+								
+								<a th:href="@{ '/mesa/edit/' + ${mesa.codigoMesa} }" class="btn btn-warning"> 
+									<i class="fas fa-edit"></i> 
+								</a>
+								 
+								<a  th:href="@{ '/mesa/del/' + ${mesa.codigoMesa} }" class="btn btn-danger"> 
+									<i class="fas fa-trash-alt"></i> 
+								</a>							
+							</td>
+							 
+						</tr>						
+					</tbody>
+				</table>
+
+			</div>
+			<div class="card-footer text-muted">
+				<a th:href="@{/mesa/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nueva carta</a>
+			</div>
+		</div>
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
+
+
+
+
+
+
+
+

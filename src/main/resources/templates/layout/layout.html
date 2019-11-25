@@ -9,10 +9,12 @@
 
 <title>University</title>
 
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-<link rel="stylesheet" th:href="@{/css/chosen.min.css}">
-<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
-<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet"
+	th:href="@{/dashboardFirst/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/dashboardFirst/css/chosen.min.css}">
+<link rel="stylesheet"
+	th:href="@{/dashboardFirst/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/dashboardFirst/css/solid.min.css}">
 </head>
 <body>
 	<header th:fragment="header">
@@ -57,7 +59,13 @@
 							<i class="fas fa-home"></i> Reportes
 					</a></li>
 					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
-							<i class="fas fa-home"></i> Reervas
+							<i class="fas fa-home"></i> Reservas
+					</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/login}">
+							<i class="fas fa-home"></i> Sign In
+					</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/usuario/register}">
+							<i class="fas fa-home"></i> Register
 					</a></li>
 				</ul>
 			</div>
@@ -68,11 +76,11 @@
 		<h1>University</h1>
 	</div>
 	<footer th:fragment="footer">
-		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
-		<script th:src="@{/js/bootstrap.min.js}"></script>
-		<script th:src="@{/js/chosen.jquery.min.js}"></script>
-		<script th:src="@{/js/fontawesome.min.js}"></script>
-		<script th:src="@{/js/sweetalert.min.js}"></script>
+		<script th:src="@{/dashboardFirst/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/dashboardFirst/js/bootstrap.min.js}"></script>
+		<script th:src="@{/dashboardFirst/js/chosen.jquery.min.js}"></script>
+		<script th:src="@{/dashboardFirst/js/fontawesome.min.js}"></script>
+		<script th:src="@{/dashboardFirst/js/sweetalert.min.js}"></script>
 	</footer>
 </body>
 </html>

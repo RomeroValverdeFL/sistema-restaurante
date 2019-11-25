@@ -42,6 +42,16 @@ public class MenuController {
 		}
 		return "/dashboard/carta/inicio";
 	}
+	@GetMapping("/ventas")
+	public String inicioVentas(Model model) {
+		try {
+			List<Menu> menus = menuService.findAll();
+			model.addAttribute("menus", menus);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return "/menu";
+	}
 	@GetMapping("/edit/{id}")
 	public String editar(@PathVariable("id") int id, Model model) {
 		try {
