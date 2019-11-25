@@ -55,12 +55,12 @@ public class InitDB implements CommandLineRunner{
         manager.setEnable(true);
         
         juan.addAuthority("ROLE_USER");
-        juan.addAuthority("ACCESS_MEDICO_READ");
+        juan.addAuthority("ACCESS_SUPERVISOR_READ");
         admin.addAuthority("ROLE_ADMIN");
-        admin.addAuthority("ACCESS_REST1");
-        admin.addAuthority("ACCESS_REST2");
+        admin.addAuthority("ACCESS_EMPLEADO");
+        admin.addAuthority("ACCESS_MESERO1");
         manager.addAuthority("ROLE_MANAGER");
-        manager.addAuthority("ACCESS_REST1");
+        manager.addAuthority("ACCESS_MESERO2");
         
         List<Usuario> usuarios = Arrays.asList(juan, admin, manager);        
         this.usuarioRepository.saveAll(usuarios);

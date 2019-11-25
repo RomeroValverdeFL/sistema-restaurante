@@ -31,9 +31,7 @@
 					<li class="nav-item active"><a class="nav-link"
 						th:href="@{/dashboard}"><i class="fas fa-home"></i> Home <span
 							class="sr-only">(current)</span> </a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
-							<i class="fas fa-home"></i> Areas
-					</a></li>
+
 					<li class="nav-item"><a class="nav-link" th:href="@{/menu}">
 							<i class="fas fa-home"></i> Carta
 					</a></li>
@@ -53,27 +51,29 @@
 							<i class="fas fa-home"></i> Personal
 					</a></li>
 					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
-							<i class="fas fa-home"></i> Politicas
-					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
-							<i class="fas fa-home"></i> Reportes
-					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
 							<i class="fas fa-home"></i> Reservas
 					</a></li>
 					<li class="nav-item"><a class="nav-link" th:href="@{/login}">
 							<i class="fas fa-home"></i> Sign In
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/usuario/register}">
-							<i class="fas fa-home"></i> Register
+					<li sec:authorize="isAuthenticated()" class="nav-item"><a
+						class="nav-link" th:href="@{/logout}"> <i
+							class="fas fa-sign-out-alt"></i> Sign Out
 					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/usuario/register}"> <i class="fas fa-home"></i>
+							Register
+					</a></li>
+					<strong><span sec:authorize="isAuthenticated()"
+						th:text="${#authentication.getPrincipal().getNombres()}">
+							User</span></strong>
 				</ul>
 			</div>
 		</nav>
 
 	</header>
 	<div class="container">
-		<h1>University</h1>
+		<h1></h1>
 	</div>
 	<footer th:fragment="footer">
 		<script th:src="@{/dashboardFirst/js/jquery-3.4.1.min.js}"></script>
