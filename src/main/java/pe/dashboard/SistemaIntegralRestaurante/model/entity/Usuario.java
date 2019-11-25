@@ -10,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -40,7 +42,17 @@ public class Usuario {
     
     @OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER, cascade = CascadeType.ALL)    
     private List<Authority> authorities;
+    
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "COD_CARGO")
+	private Cargos cargos;
 
+	public Cargos getCargos() {
+		return cargos;
+	}
+	public void setCargos(Cargos cargos) {
+		this.cargos = cargos;
+	}
 	public Usuario() {
 		this.enable = true;
 		this.authorities = new ArrayList<>();
