@@ -13,10 +13,10 @@
 			<div class="card-header">Registro de nuevo plato</div>
 			<div class="card-body">
 
-				<form th:action="@{/menu/save}" th:object="${menu}" 
+				<form th:action="@{/estado/save}" th:object="${estado}" 
 					method="post">
 					<div class="form-group">
-						<label for="nombrePlatoMenu">Nombre:</label> 
+						<label for="nombreContacto">Nombre de contacto:</label> 
 						<input type="text" class="form-control" 
 							placeholder="Nombre de Plato"
 							th:field="*{nombrePlatoMenu}">
