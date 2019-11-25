@@ -30,13 +30,13 @@ public class InitDB implements CommandLineRunner{
 		this.usuarioRepository.deleteAll();
 		this.authorityRepository.deleteAll();
 		
-		Usuario juan = new Usuario();
-		juan.setUsername("juan");
-		juan.setPassword(passwordEncoder.encode("juan"));
-		juan.setApellidos("Flores");
-		juan.setNombres("Juan");
-		juan.setCargo("cargo");
-		juan.setEnable(true);
+		Usuario luiz = new Usuario();
+		luiz.setUsername("luiz");
+		luiz.setPassword(passwordEncoder.encode("luiz"));
+		luiz.setApellidos("Romero");
+		luiz.setNombres("luiz");
+		luiz.setCargo("MESERO");
+		luiz.setEnable(true);
 		
 		Usuario admin = new Usuario();
 		admin.setUsername("admin");
@@ -46,23 +46,23 @@ public class InitDB implements CommandLineRunner{
 		admin.setCargo("cargo");
 		admin.setEnable(true);
 		
-        Usuario manager = new Usuario();
-        manager.setUsername("manager");
-        manager.setPassword(passwordEncoder.encode("manager"));
-        manager.setApellidos("Flores");
-		manager.setNombres("Juan");
-		manager.setCargo("cargo");
-        manager.setEnable(true);
+        Usuario gabriel = new Usuario();
+        gabriel.setUsername("gabriel");
+        gabriel.setPassword(passwordEncoder.encode("gabriel"));
+        gabriel.setApellidos("Quispe");
+        gabriel.setNombres("Gabriel");
+        gabriel.setCargo("COCINERO");
+        gabriel.setEnable(true);
         
-        juan.addAuthority("ROLE_USER");
-        juan.addAuthority("ACCESS_SUPERVISOR_READ");
+        luiz.addAuthority("ROLE_USER");
+        luiz.addAuthority("ACCESS_SUPERVISOR_READ");
         admin.addAuthority("ROLE_ADMIN");
         admin.addAuthority("ACCESS_EMPLEADO");
         admin.addAuthority("ACCESS_MESERO1");
-        manager.addAuthority("ROLE_MANAGER");
-        manager.addAuthority("ACCESS_MESERO2");
+        gabriel.addAuthority("ROLE_MANAGER");
+        gabriel.addAuthority("ACCESS_MESERO2");
         
-        List<Usuario> usuarios = Arrays.asList(juan, admin, manager);        
+        List<Usuario> usuarios = Arrays.asList(luiz, admin, gabriel);        
         this.usuarioRepository.saveAll(usuarios);
 	}
 }

@@ -50,14 +50,7 @@
 						class="nav-item"><a class="nav-link" th:href="@{/mesa}">
 							<i class="fas fa-home"></i> Mesas
 					</a></li>
-					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
-						class="nav-item"><a class="nav-link" th:href="@{/medico}">
-							<i class="fas fa-home"></i> Ordenes
-					</a></li>
-					<li sec:authorize="hasAnyRole('ROLE_ADMIN')"
-						class="nav-item"><a class="nav-link" th:href="@{/medico}">
-							<i class="fas fa-home"></i> Personal
-					</a></li>
+
 					<li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="nav-item"><a class="nav-link" th:href="@{/cargo}">
 							<i class="fas fa-user-tie"></i> Cargos
 					</a></li>
