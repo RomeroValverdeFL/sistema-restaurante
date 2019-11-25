@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragmen="head">
 <meta charset="UTF-8">
 <meta name="viewport"
@@ -28,41 +29,56 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						th:href="@{/dashboard}"><i class="fas fa-home"></i> Home <span
-							class="sr-only">(current)</span> </a></li>
+					<li sec:authorize="isAuthenticated()" class="nav-item active"><a
+						class="nav-link" th:href="@{/dashboard}"><i
+							class="fas fa-home"></i> Home <span class="sr-only">(current)</span>
+					</a></li>
 
-					<li class="nav-item"><a class="nav-link" th:href="@{/menu}">
+					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+						class="nav-item"><a class="nav-link" th:href="@{/menu}">
 							<i class="fas fa-home"></i> Carta
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/estado}">
+					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+						class="nav-item"><a class="nav-link" th:href="@{/estado}">
 							<i class="fas fa-home"></i> Estado
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
+					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+						class="nav-item"><a class="nav-link" th:href="@{/medico}">
 							<i class="fas fa-home"></i> Mensajeria
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/mesa}">
+					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+						class="nav-item"><a class="nav-link" th:href="@{/mesa}">
 							<i class="fas fa-home"></i> Mesas
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
+					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+						class="nav-item"><a class="nav-link" th:href="@{/medico}">
 							<i class="fas fa-home"></i> Ordenes
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
+					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+						class="nav-item"><a class="nav-link" th:href="@{/medico}">
 							<i class="fas fa-home"></i> Personal
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/medico}">
+					<li class="nav-item"><a class="nav-link" th:href="@{/cargo}">
+							<i class="fas fa-home"></i> Cargos
+					</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/salario}">
+							<i class="fas fa-home"></i> Salarios
+					</a></li>
+					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+						class="nav-item"><a class="nav-link" th:href="@{/medico}">
 							<i class="fas fa-home"></i> Reservas
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/login}">
-							<i class="fas fa-home"></i> Sign In
+					<li sec:authorize="isAnonymous()" class="nav-item"><a
+						class="nav-link" th:href="@{/login}"> <i class="fas fa-home"></i>
+							Sign In
 					</a></li>
 					<li sec:authorize="isAuthenticated()" class="nav-item"><a
 						class="nav-link" th:href="@{/logout}"> <i
 							class="fas fa-sign-out-alt"></i> Sign Out
 					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						th:href="@{/usuario/register}"> <i class="fas fa-home"></i>
-							Register
+					<li sec:authorize="isAnonymous()" class="nav-item"><a
+						class="nav-link" th:href="@{/usuario/register}"> <i
+							class="fas fa-home"></i> Register
 					</a></li>
 					<strong><span sec:authorize="isAuthenticated()"
 						th:text="${#authentication.getPrincipal().getNombres()}">
