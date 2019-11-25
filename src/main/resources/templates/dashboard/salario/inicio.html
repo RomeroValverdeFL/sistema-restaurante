@@ -4,11 +4,15 @@
 <head th:replace="layout/layout :: head"></head>
 <meta charset="UTF-8" ></meta>
 <body>
+<style>
+body{
+background-image: url("images/image_3.jpg");}
+</style>
 	<header th:replace="layout/layout :: header"></header>
 
 	<div class="container">
 
-		<h1>Lista de Salarios</h1>
+		<h1 class="text-white">Lista de Salarios</h1>
 
 		<div class="card text-center">
 			<div class="card-header">Lista de Salarios</div>
@@ -34,10 +38,7 @@
 							<td th:text="${salario.montoSalario}">Monto</td>
 							<td th:text="${salario.estados.nombreEstado}">Estado</td>							
 							<td>
-								<a th:href="@{ '/salario/info/' + ${salario.codigoSalario} }" class="btn btn-info"> 
-									<i class="fas fa-info"></i> 
-								</a>
-								
+							
 								<a th:href="@{ '/salario/edit/' + ${salario.codigoSalario} }" class="btn btn-warning"> 
 									<i class="fas fa-edit"></i> 
 								</a>

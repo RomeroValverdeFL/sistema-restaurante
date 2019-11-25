@@ -102,9 +102,9 @@ public class SalarioController {
 			} catch (Exception e2) {
 				// TODO: handle exception
 			} 
-			return "/salario";
+			return "/dashboard/salario/inicio";
 		}
-		return "redirect:/salario";
+		return "redirect:/dashboard/salario/inicio";
 	} 
 	@GetMapping("/info/{id}")
 	public String info(@PathVariable("id") int id, Model model) {
@@ -113,7 +113,7 @@ public class SalarioController {
 			if(salario.isPresent()) {
 				model.addAttribute("salario", salario.get());
 			} else {
-				return "redirect:/salario";
+				return "redirect:/dashboard/salario/nuevo";
 			}
 		} catch (Exception e) {
 
