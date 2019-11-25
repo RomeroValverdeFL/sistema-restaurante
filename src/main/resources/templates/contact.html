@@ -111,7 +111,7 @@
 				<div class="col-md-9 ftco-animate text-center mb-4">
 					<h1 class="mb-2 bread">Contact</h1>
 					<p class="breadcrumbs">
-						<span class="mr-2"><a href="index.html">Home <i
+						<span class="mr-2"><a th:href="@{/}">Inicio <i
 								class="ion-ios-arrow-forward"></i></a></span> <span>Contact us <i
 							class="ion-ios-arrow-forward"></i></span>
 					</p>
@@ -125,31 +125,29 @@
 			<div class="row d-flex align-items-stretch no-gutters">
 				<div class="col-md-6 pt-5 px-2 pb-2 p-md-5 order-md-last">
 					<h2 class="h4 mb-2 mb-md-5 font-weight-bold">Contact Us</h2>
-					<form th:action="@{/contacto/save}" th:object="${contacto}"
+					<form th:action="@{/contactoVentas/save}" th:object="${contactos}"
 						method="post">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name">
 							<input type="text" class="form-control" placeholder="Tu nombre"
 								th:field="*{nombreContacto}">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Email">
 							<input type="text" class="form-control" placeholder="Tu email"
 								th:field="*{email}">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Subject">
 							<input type="text" class="form-control" placeholder="Asunto"
 								th:field="*{nombreAsunto}">
 						</div>
-						<div class="form-group">
-							<textarea name="" id="" cols="30" rows="7" class="form-control"
-								placeholder="Message"></textarea>
+						<div class="form-group">				
+							<textarea type="text" class="form-control"
+								placeholder="Mensaje" th:field="*{mensaje}"></textarea>
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Send Message"
 								class="btn btn-primary py-3 px-5">
 						</div>
+						
 					</form>
 				</div>
 				<div class="col-md-6 d-flex align-items-stretch">

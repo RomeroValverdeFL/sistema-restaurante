@@ -22,30 +22,23 @@
 					<thead>
 						<tr>
 							<th scope="col">#</th>
-							<th scope="col">Nombre</th>
-							<th scope="col">Descripción</th>
-							<th scope="col">Precio</th>
+							<th scope="col">Solicitante</th>
+							<th scope="col">Email</th>
+							<th scope="col">Asunto</th>
+							<th scope="col">mensaje</th>
 							<th scope="col">Estado</th>
 							<th scope="col"></th>
 						</tr>
 					</thead>
-					<tbody th:each="menu: ${menus}">
+					<tbody th:each="contacto: ${contactos}">
 						<tr>
-							<th scope="row" th:text="${menu.codigoMenu}">Código</th>
-							<td th:text="${menu.nombrePlatoMenu}">Nombre</td>
-							<td th:text="${menu.descripcion}">Descripcion</td>
-							<td th:text="${menu.precio}">Precio</td>
-							<td th:text="${menu.estados.nombreEstado}">Estado</td>							
-							<td>
-								<a th:href="@{ '/menu/info/' + ${menu.codigoMenu} }" class="btn btn-info"> 
-									<i class="fas fa-info"></i> 
-								</a>
-								
-								<a th:href="@{ '/menu/edit/' + ${menu.codigoMenu} }" class="btn btn-warning"> 
-									<i class="fas fa-edit"></i> 
-								</a>
-								 
-								<a  th:href="@{ '/menu/del/' + ${menu.codigoMenu} }" class="btn btn-danger"> 
+							<th scope="row" th:text="${contacto.codigoContacto}">Código</th>
+							<td th:text="${contacto.nombreContacto}">Solicitante</td>
+							<td th:text="${contacto.email}">Email</td>
+							<td th:text="${contacto.nombreAsunto}">Asunto</td>
+							<td th:text="${contacto.mensaje}">mensaje</td>							
+							<td>						
+								<a  th:href="@{ '/contacto/del/' + ${contacto.codigoContacto} }" class="btn btn-danger"> 
 									<i class="fas fa-trash-alt"></i> 
 								</a>							
 							</td>
@@ -55,9 +48,7 @@
 				</table>
 
 			</div>
-			<div class="card-footer text-muted">
-				<a th:href="@{/menu/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nueva carta</a>
-			</div>
+
 		</div>
 
 	</div>

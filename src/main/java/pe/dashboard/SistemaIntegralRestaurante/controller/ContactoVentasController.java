@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import pe.dashboard.SistemaIntegralRestaurante.model.entity.Contactame;
+import pe.dashboard.SistemaIntegralRestaurante.model.entity.Estados;
 import pe.dashboard.SistemaIntegralRestaurante.model.entity.Menu;
 import pe.dashboard.SistemaIntegralRestaurante.service.ContactoService;
 import pe.dashboard.SistemaIntegralRestaurante.service.EstadoService;
@@ -20,7 +21,7 @@ import pe.dashboard.SistemaIntegralRestaurante.service.EstadoService;
 
 @Controller
 @RequestMapping("/contactoVentas")
-@SessionAttributes( {"contacto","estados"} )
+@SessionAttributes( {"contact","estados"} )
 public class ContactoVentasController {
 	@Autowired
 	private ContactoService contactoService;
@@ -30,8 +31,15 @@ public class ContactoVentasController {
 	@GetMapping
 	public String inicio(Model model) {
 		try {
-			List<Contactame> contactos = contactoService.findAll();
+			Contactame contactos = new Contactame();
 			model.addAttribute("contactos", contactos);
+			try {
+				List<Estados> estados = 
+						estadoService.findAll();
+				model.addAttribute("estados", estados);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
@@ -47,7 +55,7 @@ public class ContactoVentasController {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return "redirect:/contact";
+		return "redirect:/contactoVentas";
 	}
 
 }
