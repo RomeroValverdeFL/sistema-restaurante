@@ -8,6 +8,8 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <meta name="author" content="">
 
 <title>El Cajamarquino</title>
@@ -38,11 +40,11 @@
 						<!-- Nested Row within Card Body -->
 						<div class="row">
 							<div class="col-lg-6 d-none d-lg-block text-center ">
-							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png"width="400px"/>
+							<img class="animated rubberBand" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png"width="400px"/>
 							</div>
 							<div class="col-lg-6">
 								<div class="p-5">
-									<div class="text-center">
+									<div class="text-center animated bounceInDown">
 										<h1 class="h4 text-gray-900 mb-4">Bienvenido!</h1>
 									</div>
 									<form th:action="@{/signin}" class="form-signin" method="post">
@@ -53,11 +55,11 @@
 											Haz salido de forma correcta</div>
 
 										<div class="form-group">
-											<input class="form-control"
+											<input class="form-control animated bounceInLeft"
 												id="inputUsername" name="inputUsername" aria-describedby="emailHelp"
 												placeholder="Ingresa tu usuario...">
 										</div>
-										<div class="form-group">
+										<div class="form-group animated bounceInRight">
 											<input type="password" class="form-control"
 												id="inputPassword" name="inputPassword" placeholder="Ingresa tu contraseña...">
 										</div>
@@ -68,7 +70,7 @@
 													class="custom-control-label" for="customCheck">Recuerdame</label>
 											</div>
 										</div>								
-										<button class="btn btn-primary btn-user btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+										<button class="btn btn-primary btn-user btn-block animated bounceInUp" type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
 
 									</form>
 									<hr>

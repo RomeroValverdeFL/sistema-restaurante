@@ -2,6 +2,7 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org" 
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="layout/layout :: head"></head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 <meta charset="UTF-8" ></meta>
 <body>
 <style>
@@ -22,7 +23,7 @@ background-image: url("images/image_3.jpg");}
   					<span th:text="${dangerDel}"></span>
 				</div>
 			
-				<table class="table table-striped">
+				<table class="table table-striped animated flipInY">
 					<thead>
 						<tr>
 							<th scope="col">#</th>
