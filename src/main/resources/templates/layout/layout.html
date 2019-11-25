@@ -46,10 +46,7 @@
 						class="nav-item"><a class="nav-link" th:href="@{/contacto}">
 							<i class="fas fa-home"></i> Contacto
 					</a></li>
-					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
-						class="nav-item"><a class="nav-link" th:href="@{/mesa}">
-							<i class="fas fa-home"></i> Mesas
-					</a></li>
+
 
 					<li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="nav-item"><a class="nav-link" th:href="@{/cargo}">
 							<i class="fas fa-user-tie"></i> Cargos
@@ -72,10 +69,11 @@
 						class="nav-link" th:href="@{/usuario/register}"> <i
 							class="fas fa-home"></i> Sign Up
 					</a></li>
-					<strong><span sec:authorize="isAuthenticated()"
-						th:text="${#authentication.getPrincipal().getNombres()}">
-							User</span></strong>
+					
 				</ul>
+				<div style="float:right; font-weight:bold; color:white;"><span  sec:authorize="isAuthenticated()"
+						th:text="${#authentication.getPrincipal().getNombres()}">
+							User</span></div>
 			</div>
 		</nav>
 

@@ -41,8 +41,8 @@ public class InitDB implements CommandLineRunner{
 		Usuario admin = new Usuario();
 		admin.setUsername("admin");
 		admin.setPassword(passwordEncoder.encode("admin"));
-		admin.setApellidos("Flores");
-		admin.setNombres("Juan");
+		admin.setApellidos("Romero");
+		admin.setNombres("Noe");
 		admin.setCargo("cargo");
 		admin.setEnable(true);
 		
