@@ -33,6 +33,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<!-- Desde Aqui -->
 	<div class="py-1 bg-black top">
 		<div class="container">
 			<div
@@ -44,22 +45,23 @@
 								class="icon mr-2 d-flex justify-content-center align-items-center">
 								<span class="icon-phone2"></span>
 							</div>
-							<span class="text">+ 1235 2355 98</span>
+							<span class="text">+51 958797109</span>
 						</div>
 						<div class="col-md pr-4 d-flex topper align-items-center">
 							<div
 								class="icon mr-2 d-flex justify-content-center align-items-center">
 								<span class="icon-paper-plane"></span>
 							</div>
-							<span class="text">youremail@email.com</span>
+							<span class="text">elcajamarquino@email.com</span>
 						</div>
 						<div
 							class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
 							<p class="mb-0 register-link">
-								<span>Open hours:</span> <span>Monday - Sunday</span> <span>8:00AM
-									- 9:00PM</span>
+								<span>Horarios de apertura:</span> <span>Lunes a domingo
+									de </span> <span>8:00AM - 9:00PM</span>
 							</p>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -69,37 +71,37 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" th:href="@{/}">El Cajamarquino</a>
+			<a class="navbar-brand" href="index.html">El Cajamarquino</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
 				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
+			<div class="collapse navbar-collapse d-flex justify-content-around"
+				id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="index.html"
 						class="nav-link">Inicio</a></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">Nosotros</a></li>
 					<li class="nav-item"><a th:href="@{/menuVentas}"
 						class="nav-link">Carta</a></li>
-					<li class="nav-item"><a href="blog.html" class="nav-link">Testimonios</a></li>
 					<li class="nav-item"><a th:href="@{/contactoVentas}"
 						class="nav-link">Contactos</a></li>
 					<li class="nav-item"><a th:href="@{/menu/ventas}"
 						class="nav-link">Reservas</a></li>
-					<li class="nav-item cta"><a class="nav-link"
+					<li class="nav-item "><a class="nav-link"
 						th:href="@{/dashboard}"><i class="fas fa-home"></i> Dashboard</a></li>
-					<li class="nav-item cta"><a class="nav-link"
-						th:href="@{/login}"><i class="fas fa-home"></i> Sign In</a></li>
-					<li class="nav-item cta"><a class="nav-link"
+					<li class="nav-item "><a class="nav-link" th:href="@{/login}"><i
+							class="fas fa-home"></i> Log In</a></li>
+					<li class="nav-item "><a class="nav-link"
 						th:href="@{/usuario/register}"><i class="fas fa-home"></i>
-							Sign Up</a></li>
+							Register</a></li>
 
 				</ul>
 			</div>
 		</div>
 	</nav>
+	<!-- END nav -->
 	<!-- END nav -->
 
 	<section class="hero-wrap hero-wrap-2"
@@ -1263,14 +1265,13 @@
 		</div>
 	</section>
 
-	<footer class="ftco-footer ftco-bg-dark ftco-section">
+<footer class="ftco-footer ftco-bg-dark ftco-section">
 		<div class="container">
 			<div class="row mb-5">
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-4 col-lg-4">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Feliciano</h2>
-						<p>Far far away, behind the word mountains, far from the
-							countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h2 class="ftco-heading-2">El Cajamarquino</h2>
+						<p>La comida mas rica en un solo lugar. Ven ya!.</p>
 						<ul
 							class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
 							<li class="ftco-animate"><a href="#"><span
@@ -1282,28 +1283,28 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-4 col-lg-4">
 					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Open Hours</h2>
+						<h2 class="ftco-heading-2">Horario de Atención</h2>
 						<ul class="list-unstyled open-hours">
-							<li class="d-flex"><span>Monday</span><span>9:00 -
+							<li class="d-flex"><span>Lunes</span><span>9:00 -
 									24:00</span></li>
-							<li class="d-flex"><span>Tuesday</span><span>9:00 -
+							<li class="d-flex"><span>Martes</span><span>9:00 -
 									24:00</span></li>
-							<li class="d-flex"><span>Wednesday</span><span>9:00 -
+							<li class="d-flex"><span>Miercoles</span><span>9:00 -
 									24:00</span></li>
-							<li class="d-flex"><span>Thursday</span><span>9:00 -
+							<li class="d-flex"><span>Jueves</span><span>9:00 -
 									24:00</span></li>
-							<li class="d-flex"><span>Friday</span><span>9:00 -
+							<li class="d-flex"><span>Viernes</span><span>9:00 -
 									02:00</span></li>
-							<li class="d-flex"><span>Saturday</span><span>9:00 -
+							<li class="d-flex"><span>Sabado</span><span>9:00 -
 									02:00</span></li>
-							<li class="d-flex"><span>Sunday</span><span> 9:00 -
+							<li class="d-flex"><span>Domingo</span><span> 9:00 -
 									02:00</span></li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-4 col-lg-4">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2">Instagram</h2>
 						<div class="thumb d-sm-flex">
@@ -1324,35 +1325,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Newsletter</h2>
-						<p>Far far away, behind the word mountains, far from the
-							countries.</p>
-						<form action="#" class="subscribe-form">
-							<div class="form-group">
-								<input type="text" class="form-control mb-2 text-center"
-									placeholder="Enter email address"> <input type="submit"
-									value="Subscribe" class="form-control submit px-3">
-							</div>
-						</form>
-					</div>
-				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
 
-					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>
-							document.write(new Date().getFullYear());
-						</script>
-						All rights reserved | This template is made with <i
-							class="icon-heart" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
+					<p>El Cajamarquino - Todos los derchos reservados</p>
 				</div>
 			</div>
 		</div>
