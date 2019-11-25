@@ -12,7 +12,7 @@ spring:
     show-sql: false
   
 server:
-  port: 8800
+  port: 8082
   
   
 # SQL SERVER

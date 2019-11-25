@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="py-1 bg-black top">
+<div class="py-1 bg-black top">
 		<div class="container">
 			<div
 				class="row no-gutters d-flex align-items-start align-items-center px-md-0">
@@ -44,22 +44,23 @@
 								class="icon mr-2 d-flex justify-content-center align-items-center">
 								<span class="icon-phone2"></span>
 							</div>
-							<span class="text">+ 1235 2355 98</span>
+							<span class="text">+51 958797109</span>
 						</div>
 						<div class="col-md pr-4 d-flex topper align-items-center">
 							<div
 								class="icon mr-2 d-flex justify-content-center align-items-center">
 								<span class="icon-paper-plane"></span>
 							</div>
-							<span class="text">youremail@email.com</span>
+							<span class="text">elcajamarquino@email.com</span>
 						</div>
 						<div
 							class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
 							<p class="mb-0 register-link">
-								<span>Open hours:</span> <span>Monday - Sunday</span> <span>8:00AM
-									- 9:00PM</span>
+								<span>Horarios de apertura:</span> <span>Lunes a domingo
+									de </span> <span>8:00AM - 9:00PM</span>
 							</p>
 						</div>
+				
 					</div>
 				</div>
 			</div>
@@ -69,32 +70,29 @@
 		class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 		id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" th:href="@{/}">Feliciano</a>
+			<a class="navbar-brand" th:href="@{/}">El Cajamarquino</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#ftco-nav" aria-controls="ftco-nav"
 				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
+		<div class="collapse navbar-collapse d-flex justify-content-around" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a href="index.html"
+					<li class="nav-item active"><a th:href="@{/}"
 						class="nav-link">Inicio</a></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">Nosotros</a></li>
-					<li class="nav-item"><a th:href="@{/menuVentas}"
-						class="nav-link">Carta</a></li>
+					<li class="nav-item"><a th:href="@{/about}" class="nav-link">Nosotros</a></li>
+					<li class="nav-item"><a th:href="@{/menuVentas}" class="nav-link">Carta</a></li>
 					<li class="nav-item"><a href="blog.html" class="nav-link">Testimonios</a></li>
-					<li class="nav-item"><a th:href="@{/contactoVentas}"
-						class="nav-link">Contactos</a></li>
-					<li class="nav-item"><a th:href="@{/menu/ventas}"
-						class="nav-link">Reservas</a></li>
-					<li class="nav-item cta"><a class="nav-link"
+					<li class="nav-item"><a th:href="@{/contactoVentas}" class="nav-link">Contactos</a></li>
+					<li class="nav-item"><a th:href="@{/reservaVentas}" class="nav-link">Reservas</a></li>
+					<li class="nav-item "><a class="nav-link"
 						th:href="@{/dashboard}"><i class="fas fa-home"></i> Dashboard</a></li>
-					<li class="nav-item cta"><a class="nav-link"
-						th:href="@{/login}"><i class="fas fa-home"></i> Sign In</a></li>
-					<li class="nav-item cta"><a class="nav-link"
-						th:href="@{/usuario/register}"><i class="fas fa-home"></i>
-							Sign Up</a></li>
+											<li class="nav-item "><a class="nav-link"
+						th:href="@{/login}"><i class="fas fa-home"></i> Log In</a></li>
+											<li class="nav-item "><a class="nav-link"
+						th:href="@{/usuario/register}"><i class="fas fa-home"></i> Register</a></li>
+
 				</ul>
 			</div>
 		</div>
