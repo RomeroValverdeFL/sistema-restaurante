@@ -34,11 +34,11 @@
 							class="fas fa-home"></i> Home <span class="sr-only">(current)</span>
 					</a></li>
 
-					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+					<li sec:authorize="hasAnyRole('ROLE_ADMIN')"
 						class="nav-item"><a class="nav-link" th:href="@{/menu}">
 							<i class="fas fa-home"></i> Carta
 					</a></li>
-					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+					<li sec:authorize="hasAnyRole('ROLE_ADMIN')"
 						class="nav-item"><a class="nav-link" th:href="@{/estado}">
 							<i class="fas fa-home"></i> Estado
 					</a></li>
@@ -54,18 +54,18 @@
 						class="nav-item"><a class="nav-link" th:href="@{/medico}">
 							<i class="fas fa-home"></i> Ordenes
 					</a></li>
-					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
+					<li sec:authorize="hasAnyRole('ROLE_ADMIN')"
 						class="nav-item"><a class="nav-link" th:href="@{/medico}">
 							<i class="fas fa-home"></i> Personal
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/cargo}">
+					<li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="nav-item"><a class="nav-link" th:href="@{/cargo}">
 							<i class="fas fa-user-tie"></i> Cargos
 					</a></li>
-					<li class="nav-item"><a class="nav-link" th:href="@{/salario}">
+					<li sec:authorize="hasAnyRole('ROLE_ADMIN')" class="nav-item"><a class="nav-link" th:href="@{/salario}">
 							<i class="fas fa-money-bill-wave"></i> Salarios
 					</a></li>
 					<li sec:authorize="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"
-						class="nav-item"><a class="nav-link" th:href="@{/medico}">
+						class="nav-item"><a class="nav-link" th:href="@{/reserva}">
 							<i class="fas fa-home"></i> Reservas
 					</a></li>
 					<li sec:authorize="isAnonymous()" class="nav-item"><a

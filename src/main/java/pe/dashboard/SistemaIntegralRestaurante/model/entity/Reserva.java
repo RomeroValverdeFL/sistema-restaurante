@@ -35,13 +35,22 @@ public class Reserva {
 	@Column(name = "CANT_PERSONAS", length = 250, nullable = true )
 	private Integer cantidadPersonas;
 	
-	@Column(name = "fec_reserva")
-	@Temporal(TemporalType.DATE)
-	private Date fechaReserva;
+
+	@Column(name = "fec_reserva", length = 30, nullable = true )
+	private String fechaReserva;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "COD_ESTADO")
 	private Estados estados;
+
+	
+	public String getFechaReserva() {
+		return fechaReserva;
+	}
+
+	public void setFechaReserva(String fechaReserva) {
+		this.fechaReserva = fechaReserva;
+	}
 
 	public Integer getCodigoReserva() {
 		return codigoReserva;
@@ -83,13 +92,6 @@ public class Reserva {
 		this.cantidadPersonas = cantidadPersonas;
 	}
 
-	public Date getFechaReserva() {
-		return fechaReserva;
-	}
-
-	public void setFechaReserva(Date fechaReserva) {
-		this.fechaReserva = fechaReserva;
-	}
 
 	public Estados getEstados() {
 		return estados;

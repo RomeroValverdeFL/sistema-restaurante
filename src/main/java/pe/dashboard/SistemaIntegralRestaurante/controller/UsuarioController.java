@@ -1,5 +1,6 @@
 package pe.dashboard.SistemaIntegralRestaurante.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,23 +14,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import pe.dashboard.SistemaIntegralRestaurante.model.entity.Cargos;
+import pe.dashboard.SistemaIntegralRestaurante.model.entity.Salarios;
 import pe.dashboard.SistemaIntegralRestaurante.model.entity.Usuario;
+import pe.dashboard.SistemaIntegralRestaurante.service.CargoService;
 import pe.dashboard.SistemaIntegralRestaurante.service.UsuarioService;
 
 @Controller
 @RequestMapping("/usuario")
-@SessionAttributes({"usuario"})
+@SessionAttributes({"usuario","cargos"})
 public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;
 	
 	@Autowired
+	private CargoService cargoService;
+	@Autowired
     private PasswordEncoder passwordEncoder;
 	
 	@GetMapping("/register")
 	public String register(Model model) {
 		Usuario usuario = new Usuario();
+		try {
+			List<Cargos> cargos = cargoService.findAll();
+			model.addAttribute("cargos", cargos);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
 		model.addAttribute("usuario", usuario);
 		return "/dashboard/usuario/register";
 	}

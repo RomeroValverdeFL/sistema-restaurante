@@ -8,10 +8,10 @@
 
 	<div class="container">
 
-		<h1>Lista de Mensajes de contacto</h1>
+		<h1>Lista de Reservas</h1>
 
 		<div class="card text-center">
-			<div class="card-header">Lista de Mensajes de contacto</div>
+			<div class="card-header">Lista de Reservas</div>
 			<div class="card-body">
 				
 				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
@@ -22,23 +22,24 @@
 					<thead>
 						<tr>
 							<th scope="col">#</th>
-							<th scope="col">Solicitante</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Telefono</th>
 							<th scope="col">Email</th>
-							<th scope="col">Asunto</th>
-							<th scope="col">mensaje</th>
-							<th scope="col">Estado</th>
+							<th scope="col">Cantidad de personas</th>
+							<th scope="col">Fecha de Reserva</th>
 							<th scope="col"></th>
 						</tr>
 					</thead>
-					<tbody th:each="contacto: ${contactos}">
+					<tbody th:each="reserva: ${reservas}">
 						<tr>
-							<th scope="row" th:text="${contacto.codigoContacto}">Código</th>
-							<td th:text="${contacto.nombreContacto}">Solicitante</td>
-							<td th:text="${contacto.email}">Email</td>
-							<td th:text="${contacto.nombreAsunto}">Asunto</td>
-							<td th:text="${contacto.mensaje}">mensaje</td>							
+							<th scope="row" th:text="${reserva.codigoReserva}">Código</th>
+							<td th:text="${reserva.nombreReservante}">Solicitante</td>
+							<td th:text="${reserva.telefono}">Teléfono</td>
+							<td th:text="${reserva.email}">Email</td>
+							<td th:text="${reserva.cantidadPersonas}">Cantidad de Personas</td>
+							<td th:text="${reserva.fechaReserva}">Fecha de Reserva</td>							
 							<td>						
-								<a  th:href="@{ '/contacto/del/' + ${contacto.codigoContacto} }" class="btn btn-danger"> 
+								<a  th:href="@{ '/reserva/del/' + ${reserva.codigoReserva} }" class="btn btn-danger"> 
 									<i class="fas fa-trash-alt"></i> 
 								</a>							
 							</td>
