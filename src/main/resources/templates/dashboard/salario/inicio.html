@@ -8,10 +8,10 @@
 
 	<div class="container">
 
-		<h1>Lista de Platos</h1>
+		<h1>Lista de Salarios</h1>
 
 		<div class="card text-center">
-			<div class="card-header">Lista de Platos</div>
+			<div class="card-header">Lista de Salarios</div>
 			<div class="card-body">
 				
 				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
@@ -22,30 +22,27 @@
 					<thead>
 						<tr>
 							<th scope="col">#</th>
-							<th scope="col">Nombre</th>
-							<th scope="col">Descripción</th>
-							<th scope="col">Precio</th>
+							<th scope="col">Monto</th>
 							<th scope="col">Estado</th>
 							<th scope="col"></th>
 						</tr>
 					</thead>
-					<tbody th:each="menu: ${menus}">
+					<tbody th:each="salario: ${salarios}">
 						<tr>
-							<th scope="row" th:text="${menu.codigoMenu}">Código</th>
-							<td th:text="${menu.nombrePlatoMenu}">Nombre</td>
-							<td th:text="${menu.descripcion}">Descripcion</td>
-							<td th:text="${menu.precio}">Precio</td>
-							<td th:text="${menu.estados.nombreEstado}">Estado</td>							
+							<th scope="row" th:text="${salario.codigoSalario}">Código</th>
+				
+							<td th:text="${salario.montoSalario}">Monto</td>
+							<td th:text="${salario.estados.nombreEstado}">Estado</td>							
 							<td>
-								<a th:href="@{ '/menu/info/' + ${menu.codigoMenu} }" class="btn btn-info"> 
+								<a th:href="@{ '/salario/info/' + ${salario.codigoSalario} }" class="btn btn-info"> 
 									<i class="fas fa-info"></i> 
 								</a>
 								
-								<a th:href="@{ '/menu/edit/' + ${menu.codigoMenu} }" class="btn btn-warning"> 
+								<a th:href="@{ '/salario/edit/' + ${salario.codigoSalario} }" class="btn btn-warning"> 
 									<i class="fas fa-edit"></i> 
 								</a>
 								 
-								<a  th:href="@{ '/menu/del/' + ${menu.codigoMenu} }" class="btn btn-danger"> 
+								<a  th:href="@{ '/salario/del/' + ${salario.codigoSalario} }" class="btn btn-danger"> 
 									<i class="fas fa-trash-alt"></i> 
 								</a>							
 							</td>
@@ -56,7 +53,7 @@
 
 			</div>
 			<div class="card-footer text-muted">
-				<a th:href="@{/menu/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nueva carta</a>
+				<a th:href="@{/salario/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nuevo Salario</a>
 			</div>
 		</div>
 

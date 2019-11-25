@@ -21,16 +21,16 @@ public class Salarios {
 	@Column(name = "MONTO_SALARIO", nullable = false )
 	private Double montoSalario;
 
-	@Column(name = "FEC_CREACION", length = 15, nullable = false )
+	@Column(name = "FEC_CREACION", length = 15, nullable = true )
 	private String fechaCreacion;
 	
-	@Column(name = "USU_CREACION", length = 15, nullable = false )
+	@Column(name = "USU_CREACION", length = 15, nullable = true )
 	private String usuarioCreacion;
 	
-	@Column(name = "FEC_MODIFICACION", length = 15, nullable = false )
+	@Column(name = "FEC_MODIFICACION", length = 15, nullable = true )
 	private String fechaModificacion;
 	
-	@Column(name = "USU_MODIFICACION", length = 15, nullable = false )
+	@Column(name = "USU_MODIFICACION", length = 15, nullable = true )
 	private String usuarioModificacion;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

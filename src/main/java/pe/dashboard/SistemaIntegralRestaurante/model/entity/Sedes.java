@@ -25,16 +25,16 @@ public class Sedes {
 	@Column(name = "DIR_SEDE", length = 60, nullable = false )
 	private String direccionSede;
 	
-	@Column(name = "FEC_CREACION", length = 15, nullable = false )
+	@Column(name = "FEC_CREACION", length = 15, nullable = true )
 	private String fechaCreacion;
 	
-	@Column(name = "USU_CREACION", length = 15, nullable = false )
+	@Column(name = "USU_CREACION", length = 15, nullable = true )
 	private String usuarioCreacion;
 	
-	@Column(name = "FEC_MODIFICACION", length = 15, nullable = false )
+	@Column(name = "FEC_MODIFICACION", length = 15, nullable = true )
 	private String fechaModificacion;
 	
-	@Column(name = "USU_MODIFICACION", length = 15, nullable = false )
+	@Column(name = "USU_MODIFICACION", length = 15, nullable = true )
 	private String usuarioModificacion;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

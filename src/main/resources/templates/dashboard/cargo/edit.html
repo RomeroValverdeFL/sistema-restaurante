@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout/layout :: head"></head>
-<meta charset="UTF-8" ></meta>
+<meta charset="UTF-8"></meta>
 <body>
 	<header th:replace="layout/layout :: header"></header>
 
@@ -12,44 +12,40 @@
 		<div class="card">
 			<div class="card-header">Edición del Menú</div>
 			<div class="card-body">
+				<form th:action="@{/cargo/save}" th:object="${cargo}" method="post">
+					<div class="form-group">
+						<label for="nombreCargo">Nombre:</label> <input type="text"
+							class="form-control" placeholder="Nombre de Cargo"
+							th:field="*{nombreCargo}">
+					</div>
+					<div class="form-group">
+						<label for="salarios">Salario:</label> <select
+							th:field="*{salarios}" class="form-control">
+							<option th:each="salario : ${salarios}"
+								th:value="${salario.codigoSalario}"
+								th:text="${salario.montoSalario}"></option>
+						</select>
 
-				<form th:action="@{/menu/save}" th:object="${menu}" 
-					method="post">
-					<div class="form-group">
-						<label for="nombrePlatoMenu">Nombre:</label> 
-						<input type="text" class="form-control" 
-							placeholder="Nombre de Plato"
-							th:field="*{nombrePlatoMenu}">
 					</div>
+
 					<div class="form-group">
-						<label for="estado">Estado:</label> 
-						<select th:field="*{estados}" class="form-control">
-					      <option th:each="estado : ${estados}"
-					      	th:value="${estado.codigoEstado}" th:text="${estado.nombreEstado}"></option>
-					    </select>
-						
-					</div> 
-					<div class="form-group">
-						<label for="descripcion">Descripción:</label> 
-						<textarea type="text" class="form-control"
-							placeholder="Descripcion del plato"
-							th:field ="*{descripcion}"></textarea>
+						<label for="estado">Estado:</label> <select th:field="*{estados}"
+							class="form-control">
+							<option th:each="estado : ${estados}"
+								th:value="${estado.codigoEstado}"
+								th:text="${estado.nombreEstado}"></option>
+						</select>
+
 					</div>
-					<div class="form-group">
-						<label for="precio">Precio:</label> 
-						<input type="text" class="form-control" 
-							placeholder="Precio del plato"
-							th:field="*{precio}">
-					</div>
-					
+
 					<button type="submit" class="btn btn-primary">
 						<i class="fas fa-save"></i> Grabar
 					</button>
-					<a th:href="@{/menu}" class="btn btn-danger"> 
-						<i class="fas fa-undo"></i> Cancelar 
+					<a th:href="@{/cargo}" class="btn btn-danger"> <i
+						class="fas fa-undo"></i> Cancelar
 					</a>
 				</form>
-			
+
 			</div>
 		</div>
 

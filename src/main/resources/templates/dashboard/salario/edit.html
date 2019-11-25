@@ -13,13 +13,13 @@
 			<div class="card-header">Edición del Menú</div>
 			<div class="card-body">
 
-				<form th:action="@{/menu/save}" th:object="${menu}" 
+				<form th:action="@{/salario/save}" th:object="${salario}" 
 					method="post">
 					<div class="form-group">
-						<label for="nombrePlatoMenu">Nombre:</label> 
+						<label for="montoSalario">Monto:</label> 
 						<input type="text" class="form-control" 
-							placeholder="Nombre de Plato"
-							th:field="*{nombrePlatoMenu}">
+							placeholder="Monto"
+							th:field="*{montoSalario}">
 					</div>
 					<div class="form-group">
 						<label for="estado">Estado:</label> 
@@ -29,23 +29,11 @@
 					    </select>
 						
 					</div> 
-					<div class="form-group">
-						<label for="descripcion">Descripción:</label> 
-						<textarea type="text" class="form-control"
-							placeholder="Descripcion del plato"
-							th:field ="*{descripcion}"></textarea>
-					</div>
-					<div class="form-group">
-						<label for="precio">Precio:</label> 
-						<input type="text" class="form-control" 
-							placeholder="Precio del plato"
-							th:field="*{precio}">
-					</div>
 					
 					<button type="submit" class="btn btn-primary">
 						<i class="fas fa-save"></i> Grabar
 					</button>
-					<a th:href="@{/menu}" class="btn btn-danger"> 
+					<a th:href="@{/salario}" class="btn btn-danger"> 
 						<i class="fas fa-undo"></i> Cancelar 
 					</a>
 				</form>
